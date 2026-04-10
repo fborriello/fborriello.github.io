@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fborriello.github.io/sitemap.xml
+Sitemap: https://fborriello.github.io/bio/sitemap.xml
