@@ -707,71 +707,13 @@
 
         <div class="contact__inner">
 
-          <!-- Left: form -->
-          <div class="contact__form-wrap reveal">
-            <form
-              id="contact-form"
-              class="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              novalidate
-            >
-              <!-- Honeypot -->
-              <div class="form-honeypot" aria-hidden="true">
-                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-              </div>
-
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
-              </div>
-
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
-              </div>
-
-              <div class="form-field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="What's on your mind?" required rows="5"></textarea>
-              </div>
-
-              <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-
-              <button type="submit" class="btn btn--primary contact-form__submit">
-                Send Message
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </button>
-            </form>
-          </div>
-
-          <!-- Right: links -->
-          <div class="contact__info reveal reveal-delay-2">
+          <div class="contact__info reveal">
             <p class="contact__info-intro">
               I'm open to interesting conversations, new opportunities, and anything in between.
               Feel free to reach out directly.
             </p>
 
             <div class="contact__links">
-
-              <!-- Email copy -->
-              <div
-                class="contact__link-item"
-                id="copy-email"
-                data-email="borriello.fabio@gmail.com"
-                role="button"
-                tabindex="0"
-                aria-label="Copy email address"
-              >
-                <div class="contact__link-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <div>
-                  <div class="contact__link-label">Email</div>
-                  <div class="contact__link-value">borriello.fabio@gmail.com</div>
-                </div>
-                <span class="contact__link-copy">Click to copy</span>
-              </div>
 
               <!-- LinkedIn -->
               <a href="https://linkedin.com/in/fabio-borriello" target="_blank" rel="noopener noreferrer" class="contact__link-item" aria-label="LinkedIn profile">
