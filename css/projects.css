@@ -4,7 +4,7 @@
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
   margin-bottom: var(--space-10);
 }
@@ -56,6 +56,13 @@
   object-fit: contain;
   background: #ffffff;
   padding: 12px;
+}
+
+/* Full-bleed photo covers (e.g. One Key Cards) */
+.project-card__cover[src].cover--photo {
+  object-fit: cover;
+  background: #0a0a1a;
+  padding: 0;
 }
 
 .project-card__cover--gradient {
