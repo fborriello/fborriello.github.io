@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "11:30"
+      timezone: "UTC"
+    labels:
+      - configuration
+      - update
+      - github-actions-lib
+    commit-message:
+      prefix: "config"
