@@ -10,16 +10,17 @@ The site is plain HTML / CSS / JS — no build step, no framework, no package ma
 1. [Project Structure](#project-structure)
 2. [Updating Your Bio](#updating-your-bio)
 3. [Updating the Stats](#updating-the-stats)
-4. [Updating the Skills Section](#updating-the-skills-section)
-5. [Adding / Editing Work Experience](#adding--editing-work-experience)
-6. [Adding / Removing Projects](#adding--removing-projects)
-7. [Adding Articles](#adding-articles)
-8. [Updating the Contact Details](#updating-the-contact-details)
-9. [Replacing the Profile Photo](#replacing-the-profile-photo)
-10. [Replacing the CV / Resume](#replacing-the-cv--resume)
-11. [Theming and Colors](#theming-and-colors)
-12. [Deploying Changes](#deploying-changes)
-13. [Setting Up the Contact Form](#setting-up-the-contact-form)
+4. [Updating the Hero Typewriter Text](#updating-the-hero-typewriter-text)
+5. [Updating the Skills Section](#updating-the-skills-section)
+6. [Adding / Editing Work Experience](#adding--editing-work-experience)
+7. [Adding / Removing Projects](#adding--removing-projects)
+8. [Adding Articles](#adding-articles)
+9. [Updating the Contact Details](#updating-the-contact-details)
+10. [Replacing the Profile Photo](#replacing-the-profile-photo)
+11. [Replacing the CV / Resume](#replacing-the-cv--resume)
+12. [Theming and Colors](#theming-and-colors)
+13. [Deploying Changes](#deploying-changes)
+14. [Setting Up the Contact Form](#setting-up-the-contact-form)
 
 ---
 
@@ -75,6 +76,23 @@ Find the `<div class="about__stats">` block and update the numbers:
 
 ---
 
+## Updating the Hero Typewriter Text
+
+The cycling roles under your name are defined in `js/typewriter.js`:
+
+```js
+const roles = [
+  'Engineering Manager',
+  'Open Source Enthusiast',
+  'Team Builder',
+  'People & Tech Leader',
+];
+```
+
+Edit the array to add, remove, or reorder phrases. Each string is typed out and deleted in sequence.
+
+---
+
 ## Updating the Skills Section
 
 Each skill category is a `.skill-card` block inside `#skills`.
@@ -91,7 +109,10 @@ Find the correct slug for any technology at [simpleicons.org](https://simpleicon
 The hex color is the brand color shown on that page (without the `#`).
 
 To **add a new category**, copy an entire `.skill-card` block and change the title and icons.
-Remember to also add a new column to `css/skills.css` if you need more than 3 columns.
+The grid handles wrapping automatically (3 columns on desktop, 2 on tablet, 1 on mobile) — no CSS changes needed.
+
+To **reorder categories**, cut and paste `.skill-card` blocks within `<div class="skills__grid">`.
+The visual order on the page matches the HTML source order.
 
 ---
 
@@ -124,6 +145,16 @@ Copy the existing `.timeline-item` block and paste it **below** the current one 
 
 The first (topmost) entry automatically gets the animated pulse dot.
 All subsequent entries get a static dot.
+
+m### Show or hide an entry
+
+Entries can be hidden without deleting them by adding `style="display:none"` to the `.timeline-item`:
+
+```html
+<div class="timeline-item reveal" style="display:none">
+```
+
+Remove the attribute to make it visible again. Useful for drafting a future role before its start date.
 
 ---
 
