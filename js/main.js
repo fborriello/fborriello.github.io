@@ -6,6 +6,7 @@ import { initTheme }       from './theme.js';
 import { initNav }         from './nav.js';
 import { initTypewriter }  from './typewriter.js';
 import { initAnimations }  from './animations.js';
+import { initContact }     from './contact.js';
 import { initGithubStats } from './github.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,5 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initTypewriter();
   initAnimations();
+  initContact();
   initGithubStats();
 });
