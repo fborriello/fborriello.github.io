@@ -64,7 +64,7 @@ function initCopyEmail() {
       await navigator.clipboard.writeText(email);
       if (copyHint) {
         copyHint.textContent = '✓ Copied!';
-        setTimeout(() => { copyHint.textContent = 'Click to copy'; }, 2500);
+        setTimeout(() => { copyHint.textContent = 'Copy ✉'; }, 2500);
       }
     } catch {
       // Fallback: open mailto
