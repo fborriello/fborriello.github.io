@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 
   <!-- Anti-FOUC: apply theme before CSS renders -->
   <script>
@@ -136,7 +138,7 @@
           <h1 class="hero__name">Fabio Borriello</h1>
 
           <p class="hero__subtitle">
-            <span id="typewriter-text"></span><span class="hero__cursor" aria-hidden="true"></span>
+            <span id="typewriter-text" aria-live="polite" aria-atomic="true"></span><span class="hero__cursor" aria-hidden="true"></span>
           </p>
 
           <div class="hero__ctas">
@@ -277,21 +279,21 @@
 
             <div class="about__stats" aria-label="Key stats">
               <div class="stat-card">
-                <div class="stat-card__number" data-count="16">0</div>
+                <div class="stat-card__number" data-count="16" aria-live="polite">0</div>
                 <div class="stat-card__label">Engineers Led</div>
                 <div class="stat-card__sub">simultaneously</div>
               </div>
               <div class="stat-card">
-                <div class="stat-card__number" data-count="4">0</div>
+                <div class="stat-card__number" data-count="4" aria-live="polite">0</div>
                 <div class="stat-card__label">Teams Built</div>
                 <div class="stat-card__sub">simultaneously</div>
               </div>
               <div class="stat-card">
-                <div class="stat-card__number" data-count="20" data-suffix="+">0+</div>
+                <div class="stat-card__number" data-count="20" data-suffix="+" aria-live="polite">0+</div>
                 <div class="stat-card__label">Years Exp.</div>
               </div>
               <div class="stat-card">
-                <div class="stat-card__number" data-count="10" data-suffix="+">0+</div>
+                <div class="stat-card__number" data-count="10" data-suffix="+" aria-live="polite">0+</div>
                 <div class="stat-card__label">Projects</div>
               </div>
             </div>
@@ -655,7 +657,7 @@
 
           <!-- BULL — featured -->
           <div class="project-card project-card--featured reveal reveal-delay-1">
-            <img src="https://raw.githubusercontent.com/ExpediaGroup/bull/master/docs/site/resources/images/BullBranding_04.png" alt="BULL library branding" class="project-card__cover" loading="eager">
+            <img src="https://raw.githubusercontent.com/ExpediaGroup/bull/master/docs/site/resources/images/BullBranding_04.png" alt="BULL library branding" class="project-card__cover" loading="lazy">
             <div class="project-card__body">
               <h3 class="project-card__title">BULL</h3>
               <p class="project-card__desc">Bean Utils Light Library — a generic, flexible, and incredibly fast Java bean-to-bean transformer. Supports mutable/immutable beans, Java Records, nested collections, and lambda transformers. Used across enterprise Java ecosystems.</p>
@@ -679,7 +681,7 @@
 
           <!-- bull-tutorial -->
           <div class="project-card reveal reveal-delay-2">
-            <div class="project-card__cover project-card__cover--gradient" style="--cover-gradient: linear-gradient(135deg, #1a2a1a, #2d4d2d)" aria-hidden="true">📘</div>
+            <div class="project-card__cover project-card__cover--gradient" style="--cover-gradient: linear-gradient(135deg, #1a2a1a, #2d4d2d)" role="img" aria-label="Book cover illustration">📘</div>
             <div class="project-card__body">
               <h3 class="project-card__title">BULL Tutorial</h3>
               <p class="project-card__desc">Spring Boot application demonstrating BULL usage with REST APIs and Swagger UI. Multi-module Maven project structured with common, dao, service, and web layers.</p>
@@ -699,7 +701,7 @@
 
           <!-- awsS3Downloader -->
           <div class="project-card reveal reveal-delay-3">
-            <div class="project-card__cover project-card__cover--gradient" style="--cover-gradient: linear-gradient(135deg, #2a1a0f, #4a3020)" aria-hidden="true">☁️</div>
+            <div class="project-card__cover project-card__cover--gradient" style="--cover-gradient: linear-gradient(135deg, #2a1a0f, #4a3020)" role="img" aria-label="Cloud illustration">☁️</div>
             <div class="project-card__body">
               <h3 class="project-card__title">AWS S3 Downloader</h3>
               <p class="project-card__desc">Spring Boot REST API to recursively download content from an AWS S3 bucket given a path. Includes a Postman collection for easy testing and exploration.</p>
@@ -748,6 +750,7 @@
           <a href="https://dzone.com/articles/how-to-transform-any-type-of-java-bean-with-one-li" target="_blank" rel="noopener noreferrer" class="article-card reveal reveal-delay-1" aria-label="Read article on DZone">
             <div class="article-card__pub">
               <span class="article-card__source">DZone</span>
+              <time datetime="2019">2019</time>
             </div>
             <h3 class="article-card__title">How to Transform Any Type of Java Bean With BULL</h3>
             <p class="article-card__desc">A deep-dive into BULL — explaining how the library handles complex Java bean transformations with zero boilerplate, and why it outperforms alternatives like Dozer and MapStruct for many use cases.</p>
@@ -766,6 +769,7 @@
           <a href="https://www.infoq.com/articles/expedia-rid-of-bean-transformers/" target="_blank" rel="noopener noreferrer" class="article-card reveal reveal-delay-2" aria-label="Read article on InfoQ">
             <div class="article-card__pub">
               <span class="article-card__source article-card__source--infoq">InfoQ</span>
+              <time datetime="2020">2020</time>
             </div>
             <h3 class="article-card__title">How Expedia Is Getting Rid of Java Bean Transformers</h3>
             <p class="article-card__desc">The story behind adopting BULL at scale inside Expedia Group — replacing verbose manual bean-mapping code across large Java codebases and aligning engineering teams around a single transformation approach.</p>
@@ -779,7 +783,6 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
           </a>
-
         </div>
       </div>
     </section>
@@ -841,6 +844,18 @@
                 </div>
                 <span class="contact__link-copy">Open ↗</span>
               </a>
+
+              <!-- Email copy-to-clipboard -->
+              <button class="contact__link-item" id="copy-email" data-email="borriello.fabio@gmail.com" aria-label="Copy email address">
+                <div class="contact__link-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="contact__link-label">Email</div>
+                  <div class="contact__link-value">borriello.fabio@gmail.com</div>
+                </div>
+                <span class="contact__link-copy" id="copy-email-feedback">Copy ✉</span>
+              </button>
 
             </div>
           </div>

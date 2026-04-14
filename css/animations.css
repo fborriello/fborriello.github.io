@@ -99,3 +99,21 @@
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ===================================
+   REDUCED-MOTION OVERRIDES
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3,
+  .reveal-delay-4,
+  .reveal-delay-5,
+  .reveal-delay-6 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
