@@ -34,7 +34,8 @@ fb-personal-website/
 │   ├── variables.css   ← All colors, fonts, spacing — start here for theming
 │   └── …
 ├── js/                 ← One JS module per feature
-│   └── main.js         ← Entry point
+│   ├── main.js         ← Entry point
+│   └── experiences.js  ← Experience data + renderers (single source of truth for both index + CV)
 ├── assets/
 │   ├── images/         ← profile.jpg, og-preview.png, project screenshots
 │   └── resume.pdf      ← Downloadable CV
@@ -142,43 +143,52 @@ Current category order (row 1 → row 2):
 
 ## Adding / Editing Work Experience
 
-Experience entries are inside `<div class="experience__timeline">` in `index.html`.
+All experience data lives in a single source of truth: **`js/experiences.js`**.
+Both the portfolio timeline (`index.html`) and the full CV (`pages/fbResume.html`) are rendered from this file — you never need to edit HTML for experience changes.
+
+### Data structure
+
+Each entry in the `experiences` array looks like this:
+
+```js
+{
+  hidden: false,        // true = renders with display:none (draft a future role)
+  showInIndex: true,    // true = appears in the portfolio timeline (index.html)
+  index: {              // only needed when showInIndex: true
+    role: 'Engineering Manager',   // title shown in the portfolio
+    date: '2020 – Present',        // simplified date range (year only)
+    location: 'Italy · Hybrid',
+  },
+  cv: {
+    role: 'Manager, Software Development Engineering',  // full title in the CV
+    date: 'Jun 2022 – Present',                         // full date with month
+  },
+  company: 'Expedia Group',    // used in both views
+  bullets: [                   // used in both views (empty array = no bullet list)
+    'Led cross-functional engineering teams …',
+  ],
+  tags: ['Engineering Leadership', 'Java'],  // shown in portfolio only
+},
+```
 
 ### Add a new entry
 
-Copy the existing `.timeline-item` block and paste it **below** the current one (older roles go lower):
+1. Open `js/experiences.js`
+2. Add a new object to the top of the `experiences` array (most recent first)
+3. Set `showInIndex: true` if it should appear in the portfolio, `false` for CV-only
+4. If `showInIndex: true`, fill in the `index` block with simplified date and location
 
-```html
-<div class="timeline-item reveal">
-  <div class="timeline-card">
-    <div class="timeline-card__meta">
-      <span class="timeline-card__company">Company Name</span>
-      <span class="timeline-card__date">2016 – 2020</span>
-    </div>
-    <h3 class="timeline-card__role">Your Role</h3>
-    <p class="timeline-card__location">City · Country</p>
-    <ul class="timeline-card__bullets">
-      <li class="timeline-card__bullet">Key achievement or responsibility.</li>
-    </ul>
-    <div class="timeline-card__tags">
-      <span class="tag">Java</span>
-    </div>
-  </div>
-</div>
-```
-
-The first (topmost) entry automatically gets the animated pulse dot.
-All subsequent entries get a static dot.
+The portfolio always shows the first 3 non-hidden `showInIndex: true` entries.
 
 ### Show or hide an entry
 
-Entries can be hidden without deleting them by adding `style="display:none"` to the `.timeline-item`:
+Set `hidden: true` to suppress rendering without deleting the data.
+Set it back to `false` to make it visible. Useful for drafting a future role before its start date.
 
-```html
-<div class="timeline-item reveal" style="display:none">
-```
+### Edit an entry
 
-Remove the attribute to make it visible again. Useful for drafting a future role before its start date.
+Find the entry by company/role in `js/experiences.js` and update it directly.
+Changes automatically apply to both the portfolio and CV.
 
 ---
 
