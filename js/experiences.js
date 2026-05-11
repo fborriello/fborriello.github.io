@@ -6,26 +6,27 @@ const PIN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" 
 
 export const experiences = [
   {
-    hidden: true,
+    hidden: false,
     showInIndex: true,
     index: {
-      role: 'Frontend Lead Engineer – Travelthings',
+      role: 'Lead Engineer - Travel Things',
       date: '2026 – Present',
       location: 'Italy · Remote',
     },
     cv: {
-      role: 'Frontend Lead Engineer – Travelthings',
+      role: 'Lead Engineer - Travel Things',
       date: '2026 – Present',
     },
     company: 'eDreams ODIGEO',
     bullets: [
-      'Leading a cross-functional agile team of frontend engineers within the Travelthings vertical, owning technical strategy, delivery, and team health.',
-      'Driving hands-on technical leadership across a modern frontend stack — React, GraphQL, Jest, Cypress, and CI/CD pipelines.',
-      'Translating product requirements into incremental, customer-facing deliverables through clear technical design and iterative execution.',
-      'Managing performance, goal-setting, and career growth for team members; actively involved in recruiting and onboarding.',
-      'Collaborating cross-functionally with Product, Architecture, and Data Science to define and execute the team\'s technical roadmap.',
+      'Directly reporting to the Development Director, I ensure technical excellence and maximize team health while driving the technical strategy for product evolution within my domain. I balance high-performance feature development with innovation and technical improvements to deliver consistent business value.',
+      'Technical Strategy & Design: Define the technical roadmap for modules, collaborating with architecture and product teams to ideate and shape product direction.',
+      'Engineering Excellence: Translate complex functional specifications into high-performance, scalable technical designs and codebases.',
+      'People Leadership: Manage employee performance, set professional goals, and act as a mentor to develop the technical careers of engineers within the team.',
+      'Team Performance: Foster a self-organized, collaborative team environment focused on continuous improvement, innovation, and efficient incident management.',
+      'Decision Making & Risk: Represent technical expertise in key business decisions, providing options and managing risks to ensure optimal system evolution'
     ],
-    tags: ['Frontend Leadership', 'React', 'GraphQL', 'Engineering Management', 'Agile Delivery', 'CI/CD'],
+    tags: ['Engineering Leadership', 'People Growth', 'Developing/Growing Talent'],
   },
   {
     hidden: false,
